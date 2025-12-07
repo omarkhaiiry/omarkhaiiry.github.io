@@ -1,0 +1,49 @@
+/* FAB Styles */
+.register-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #c5a059;
+    color: #ffffff !important;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    border-bottom: none;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+}
+
+.register-fab:hover {
+    background-color: #d6b16a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    color: #ffffff !important;
+}
+
+@media screen and (max-width: 736px) {
+    .register-fab {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(197, 160, 89, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+    }
+}
