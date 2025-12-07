@@ -260,7 +260,10 @@
 			url: $this.attr('action'),
 			method: 'POST',
 			data: $this.serialize(),
-			dataType: 'json'
+			dataType: 'json',
+			headers: {
+				'Accept': 'application/json'
+			}
 		}).done(function () {
 			$this[0].reset();
 			alert('Thank you! Your message has been sent successfully.');
