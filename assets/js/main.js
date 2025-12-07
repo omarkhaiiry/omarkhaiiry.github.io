@@ -266,13 +266,33 @@
 			}
 		}).done(function () {
 			$this[0].reset();
-			alert('Thank you! Your message has been sent successfully.');
+			// Show Modal
+			$('#success-modal').fadeIn();
 		}).fail(function () {
 			alert('Oops! Something went wrong. Please check your internet connection and try again.');
 		}).always(function () {
 			// Re-enable button
 			$this.find('input[type="submit"], button').prop('disabled', false).removeClass('disabled');
 		});
+	});
+
+	// Modal Close Logic
+	var $modal = $('#success-modal');
+	var $closeBtn = $('#close-modal-btn');
+	var $closeSpan = $('.close-modal');
+
+	$closeBtn.on('click', function () {
+		$modal.fadeOut();
+	});
+
+	$closeSpan.on('click', function () {
+		$modal.fadeOut();
+	});
+
+	$(window).on('click', function (event) {
+		if ($(event.target).is($modal)) {
+			$modal.fadeOut();
+		}
 	});
 
 })(jQuery);
