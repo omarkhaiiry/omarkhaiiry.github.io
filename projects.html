@@ -38,88 +38,198 @@
             <div class="container">
                 <header class="major">
                     <h2>Available Projects</h2>
-                    <p>Explore our exclusive portfolio managed by Mostafa Farouk.</p>
+                    <p>Explore our exclusive portfolio.</p>
                 </header>
 
                 <!-- Project Grid -->
                 <section id="content">
-                    <div class="row">
+                    <!-- East Cairo -->
+                    <div class="category-toggle" onclick="toggleCategory('east-cairo')">
+                        <header class="major" style="cursor: pointer; margin-bottom: 1em;">
+                            <h3>East Cairo <i id="east-cairo-icon" class="icon solid fa-chevron-down"
+                                    style="padding-left: 10px; transition: transform 0.3s; font-size: 0.8em;"></i></h3>
+                        </header>
+                    </div>
+                    <div id="east-cairo" class="row category-content" style="display: none;">
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
-                                <a href="project-details.html" class="image fit"><img src="images/pic02.jpg"
+                                <a href="project-new-kairo.html" class="image fit"><img src="images/pic02.jpg"
                                         alt="" /></a>
                                 <header>
                                     <h3>New Kairo</h3>
                                 </header>
-                                <p>Strategically located in East Cairo, offering gated communities with smart layouts
-                                    and lush green spaces.</p>
+                                <p>Luxury Living in the Heart of New Cairo.</p>
                                 <footer>
                                     <ul class="actions">
-                                        <li><a href="project-details.html" class="button alt">View Details</a></li>
+                                        <li><a href="project-new-kairo.html" class="button alt">View Details</a></li>
                                     </ul>
                                 </footer>
                             </section>
                         </div>
+                    </div>
+                    <hr />
+
+                    <!-- West Cairo -->
+                    <div class="category-toggle" onclick="toggleCategory('west-cairo')">
+                        <header class="major" style="cursor: pointer; margin-bottom: 1em;">
+                            <h3>West Cairo <i id="west-cairo-icon" class="icon solid fa-chevron-down"
+                                    style="padding-left: 10px; transition: transform 0.3s; font-size: 0.8em;"></i></h3>
+                        </header>
+                    </div>
+                    <div id="west-cairo" class="row category-content" style="display: none;">
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
-                                <a href="project-details.html" class="image fit"><img src="images/pic03.jpg"
+                                <a href="project-new-giza.html" class="image fit"><img src="images/pic03.jpg"
                                         alt="" /></a>
                                 <header>
                                     <h3>New Giza</h3>
                                 </header>
-                                <p>Sophisticated golf community in 6th of October City. Now launching new serviced
-                                    apartments.</p>
+                                <p>Luxury Living West of Cairo.</p>
                                 <footer>
                                     <ul class="actions">
-                                        <li><a href="project-details.html" class="button alt">View Details</a></li>
+                                        <li><a href="project-new-giza.html" class="button alt">View Details</a></li>
                                     </ul>
                                 </footer>
                             </section>
                         </div>
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
-                                <a href="project-details.html" class="image fit"><img src="images/pic04.jpg"
+                                <a href="project-ivy.html" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                                <header>
+                                    <h3>IVY New Zayed</h3>
+                                </header>
+                                <p>A modern compound by The G Developments.</p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="project-ivy.html" class="button alt">View Details</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <section class="box">
+                                <a href="project-city-view.html" class="image fit"><img src="images/banner.jpg"
+                                        alt="" /></a>
+                                <header>
+                                    <h3>City View</h3>
+                                </header>
+                                <p>Exclusive Living in West Cairo.</p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="project-city-view.html" class="button alt">View Details</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <!-- North Coast -->
+                    <div class="category-toggle" onclick="toggleCategory('north-coast')">
+                        <header class="major" style="cursor: pointer; margin-bottom: 1em;">
+                            <h3>North Coast <i id="north-coast-icon" class="icon solid fa-chevron-down"
+                                    style="padding-left: 10px; transition: transform 0.3s; font-size: 0.8em;"></i></h3>
+                        </header>
+                    </div>
+                    <div id="north-coast" class="row category-content" style="display: none;">
+                        <div class="col-4 col-6-medium col-12-small">
+                            <section class="box">
+                                <a href="project-seashell.html" class="image fit"><img src="images/pic04.jpg"
                                         alt="" /></a>
                                 <header>
                                     <h3>Seashell Ras El Hekma</h3>
                                 </header>
-                                <p>Exclusive North Coast beachfront resort with chalets, standalone villas, and
-                                    townhomes.</p>
+                                <p>Exclusive North Coast Beachfront Resort.</p>
                                 <footer>
                                     <ul class="actions">
-                                        <li><a href="project-details.html" class="button alt">View Details</a></li>
+                                        <li><a href="project-seashell.html" class="button alt">View Details</a></li>
                                     </ul>
                                 </footer>
                             </section>
                         </div>
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
-                                <a href="project-details.html" class="image fit"><img src="images/pic05.jpg"
+                                <a href="project-playa-ras-el-hekma.html" class="image fit"><img src="images/pic05.jpg"
                                         alt="" /></a>
                                 <header>
                                     <h3>Playa Ras El Hekma</h3>
                                 </header>
-                                <p>Modern coastal living with flexible payment plans and direct beach access in Ras El
-                                    Hekma Bay.</p>
+                                <p>Modern Coastal Living.</p>
                                 <footer>
                                     <ul class="actions">
-                                        <li><a href="project-details.html" class="button alt">View Details</a></li>
+                                        <li><a href="project-playa-ras-el-hekma.html" class="button alt">View
+                                                Details</a></li>
                                     </ul>
                                 </footer>
                             </section>
                         </div>
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
-                                <a href="project-details.html" class="image fit"><img src="images/pic06.jpg"
+                                <a href="project-playa-ghazla.html" class="image fit"><img src="images/pic06.jpg"
                                         alt="" /></a>
                                 <header>
                                     <h3>Playa Ghazla</h3>
                                 </header>
-                                <p>The newest coastal launch with curated beachfront homes and immediate move-in
-                                    options.</p>
+                                <p>Curated Beachfront Homes.</p>
                                 <footer>
                                     <ul class="actions">
-                                        <li><a href="project-details.html" class="button alt">View Details</a></li>
+                                        <li><a href="project-playa-ghazla.html" class="button alt">View Details</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <section class="box">
+                                <a href="project-hacienda-red.html" class="image fit"><img src="images/banner.jpg"
+                                        alt="" /></a>
+                                <header>
+                                    <h3>Hacienda Red</h3>
+                                </header>
+                                <p>Premier North Coast Destination.</p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="project-hacienda-red.html" class="button alt">View Details</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <!-- Sokhna -->
+                    <div class="category-toggle" onclick="toggleCategory('sokhna')">
+                        <header class="major" style="cursor: pointer; margin-bottom: 1em;">
+                            <h3>Ain Sokhna <i id="sokhna-icon" class="icon solid fa-chevron-down"
+                                    style="padding-left: 10px; transition: transform 0.3s; font-size: 0.8em;"></i></h3>
+                        </header>
+                    </div>
+                    <div id="sokhna" class="row category-content" style="display: none;">
+                        <div class="col-4 col-6-medium col-12-small">
+                            <section class="box">
+                                <a href="project-einbay.html" class="image fit"><img src="images/banner.jpg"
+                                        alt="" /></a>
+                                <header>
+                                    <h3>EinBay</h3>
+                                </header>
+                                <p>Luxury Ain Sokhna Resort.</p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="project-einbay.html" class="button alt">View Details</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <section class="box">
+                                <a href="project-einresort.html" class="image fit"><img src="images/banner.jpg"
+                                        alt="" /></a>
+                                <header>
+                                    <h3>EinResort</h3>
+                                </header>
+                                <p>Serene Sokhna Getaway.</p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="project-einresort.html" class="button alt">View Details</a></li>
                                     </ul>
                                 </footer>
                             </section>
@@ -159,7 +269,36 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function toggleCategory(id) {
+            var content = document.getElementById(id);
+            var icon = document.getElementById(id + '-icon');
 
+            if (content.style.display === "none") {
+                // Close all others first (optional, but good UX)
+                var allContents = document.querySelectorAll('.category-content');
+                var allIcons = document.querySelectorAll('.fa-chevron-up');
+
+                // Reset all
+                document.querySelectorAll('.category-content').forEach(function (el) {
+                    el.style.display = 'none';
+                });
+                document.querySelectorAll('.icon.solid.fa-chevron-up').forEach(function (el) {
+                    el.classList.remove('fa-chevron-up');
+                    el.classList.add('fa-chevron-down');
+                });
+
+                // Open clicked
+                content.style.display = "flex"; // Changed to flex for grid system
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                content.style.display = "none";
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
 </body>
 
 </html>
