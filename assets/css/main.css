@@ -3182,7 +3182,7 @@ input[type="button"]:disabled,
 }
 
 .spotlight .image.main {
-	display: none;
+	display: block;
 }
 
 .spotlight .image.main img {
