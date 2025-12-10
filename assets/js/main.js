@@ -295,4 +295,45 @@
 		}
 	});
 
+	// Video Autoplay Handler
+	// Handle autoplay restrictions by attempting to play video after user interaction
+	var videoPlayed = false;
+	var $video = $('#two video');
+
+	function playVideo() {
+		if ($video.length && !videoPlayed) {
+			$video[0].play().then(function () {
+				videoPlayed = true;
+				console.log('Video started playing');
+			}).catch(function (error) {
+				console.log('Video autoplay prevented:', error);
+			});
+		}
+	}
+
+	// Try to play on load
+	$window.on('load', function () {
+		setTimeout(playVideo, 500);
+	});
+
+	// Try to play when section comes into view
+	if ($video.length) {
+		$(window).on('scroll', function () {
+			var videoTop = $video.offset().top;
+			var videoBottom = videoTop + $video.height();
+			var viewportTop = $(window).scrollTop();
+			var viewportBottom = viewportTop + $(window).height();
+
+			if (videoBottom > viewportTop && videoTop < viewportBottom) {
+				playVideo();
+			}
+		});
+	}
+
+	// Try to play on any user interaction
+	var userInteractionEvents = 'click touchstart keydown scroll';
+	$(document).one(userInteractionEvents, function () {
+		setTimeout(playVideo, 100);
+	});
+
 })(jQuery);

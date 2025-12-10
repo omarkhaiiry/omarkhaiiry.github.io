@@ -1,0 +1,11 @@
+/* Custom styling for About Us section with scrollable background */
+#about {
+    background-image: url('../../images/pic02.jpg');
+    background-attachment: scroll !important;
+    background-position: top center !important;
+}
+
+/* Hide the image element since we're using background-image */
+#about .image.main {
+    display: none !important;
+}
