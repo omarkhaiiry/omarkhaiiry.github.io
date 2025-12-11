@@ -9,3 +9,32 @@
 #about .image.main {
     display: none !important;
 }
+
+/* Custom styling for Coastal Destinations section with scrollable background */
+#three {
+    background-image: url('../../images/pic04.jpg');
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    background-size: cover !important;
+}
+
+/* Hide the image element since we're using background-image */
+#three .image.main {
+    display: none !important;
+}
+
+/* Make banner logo fill the circular container */
+#banner .content .image img {
+    object-fit: cover !important;
+    height: 100% !important;
+}
+
+/* Zoom effect for specific images */
+.zoom-image {
+    overflow: hidden;
+}
+
+.zoom-image img {
+    transform: scale(1.2);
+    transform-origin: center center;
+}
