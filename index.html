@@ -41,15 +41,15 @@
 					<h2>Luxury & Commercial Properties</h2>
 					<p>Your Gateway to Premium Real Estate Investments.</p>
 				</header>
-				<span class="image"><img src="images/glogo.png" alt="" /></span>
+				<span class="image"><img src="images/glogo1.png" alt="" /></span>
 			</div>
 			<a href="#about" class="goto-next scrolly">Next</a>
 		</section>
 
 		<!-- One -->
 		<section id="about" class="spotlight style1 bottom">
-			<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
-			<div class="content">
+			<span class="image fit main"><img src="images/gbanner.png" alt="" /></span>
+			<div class="content" style="padding: 1.5em 0 !important;">
 				<div class="container">
 					<div class="row">
 						<div class="col-4 col-12-medium">
@@ -81,15 +81,16 @@
 	<!-- Two -->
 	<section id="two" class="spotlight style2 right">
 		<span class="image fit main">
-			<video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-				<source src="images/vid01.mp4" type="video/mp4">
+			<video id="bg-video-02" autoplay loop muted playsinline
+				style="width: 100%; height: 100%; object-fit: cover;">
+				<source src="images/vid02.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
 		</span>
 		<div class="content">
 			<header>
-				<h2>East/West Cairo Developments</h2>
-				<p>Launching New Phases & Serviced Apartments</p>
+				<h2>Cairo Developments</h2>
+				<p>New Phases & Serviced Apartments</p>
 			</header>
 			<p>Discover the latest opportunities in <strong>New Kairo</strong>, and explore our West Cairo portfolio
 				including <strong>New Giza</strong>, <strong>IVY New Zayed</strong>, and <strong>City View</strong>.
@@ -216,6 +217,14 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var vid = document.getElementById("bg-video-02");
+			if (vid) {
+				vid.playbackRate = 0.7;
+			}
+		});
+	</script>
 
 
 
