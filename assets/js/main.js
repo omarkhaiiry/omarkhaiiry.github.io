@@ -336,4 +336,26 @@
 		setTimeout(playVideo, 100);
 	});
 
+	// Contact Number Rotation (Even 50/50 split per session)
+	var phoneNumbers = [
+		{ tel: "+201069933221", wa: "201069933221" },
+		{ tel: "+201011039552", wa: "201011039552" }
+	];
+
+	// Use sessionStorage to keep the number consistent while the user browses different pages
+	var contactIndex = sessionStorage.getItem('assignedContactIndex');
+	if (contactIndex === null) {
+		// Randomly assign 0 or 1 on their first page load for an even 50/50 split
+		contactIndex = Math.random() < 0.5 ? 0 : 1;
+		sessionStorage.setItem('assignedContactIndex', contactIndex);
+	} else {
+		contactIndex = parseInt(contactIndex, 10);
+	}
+
+	var contact = phoneNumbers[contactIndex];
+	
+	// Update all phone and whatsapp links on the page
+	$('a[href^="tel:"]').attr('href', 'tel:' + contact.tel);
+	$('a[href^="https://wa.me/"]').attr('href', 'https://wa.me/' + contact.wa);
+
 })(jQuery);
