@@ -338,8 +338,8 @@
 
 	// Contact Number Rotation (Even 50/50 split per session)
 	var phoneNumbers = [
-		{ tel: "+201069933221", wa: "201069933221" },
-		{ tel: "+201011039552", wa: "201011039552" }
+		{ tel: "+201069933221", wa: "201069933221", display: "+20 106 993 3221" },
+		{ tel: "+201011039552", wa: "201011039552", display: "+20 101 103 9552" }
 	];
 
 	// Use sessionStorage to keep the number consistent while the user browses different pages
@@ -357,5 +357,58 @@
 	// Update all phone and whatsapp links on the page
 	$('a[href^="tel:"]').attr('href', 'tel:' + contact.tel);
 	$('a[href^="https://wa.me/"]').attr('href', 'https://wa.me/' + contact.wa);
+	
+	// Update visible text
+	$('.contact-display-phone').text(contact.display);
+
+	/* Custom Select Logic */
+	document.querySelectorAll('.custom-select-wrapper').forEach(function(wrapper) {
+		const select = wrapper.querySelector('.custom-select');
+		const hiddenInput = wrapper.querySelector('input[type="hidden"]');
+		
+		wrapper.addEventListener('click', function(e) {
+			const trigger = e.target.closest('.custom-select__trigger');
+			if (trigger) {
+				select.classList.toggle('open');
+			}
+			
+			const option = e.target.closest('.custom-option');
+			if (option) {
+				const value = option.getAttribute('data-value');
+				const text = option.textContent;
+				
+				// Update hidden input
+				if (hiddenInput) hiddenInput.value = value;
+				
+				// Update trigger text
+				select.querySelector('.custom-select__text').textContent = text;
+				
+				// Update selected class
+				select.querySelectorAll('.custom-option').forEach(opt => opt.classList.remove('selected'));
+				option.classList.add('selected');
+				
+				select.classList.remove('open');
+			}
+		});
+	});
+
+	window.addEventListener('click', function(e) {
+		document.querySelectorAll('.custom-select').forEach(function(select) {
+			if (!select.contains(e.target)) {
+				select.classList.remove('open');
+			}
+		});
+	});
+
+	// "Call Now" nav button: dial on mobile, go to contact page on desktop
+	function updateCallNowLinks() {
+		var isMobile = window.innerWidth <= 736;
+		document.querySelectorAll('a.button.primary[href^="tel:"]').forEach(function(a) {
+			a.dataset.tel = a.dataset.tel || a.getAttribute('href');
+			a.href = isMobile ? a.dataset.tel : 'contact.html';
+		});
+	}
+	updateCallNowLinks();
+	window.addEventListener('resize', updateCallNowLinks);
 
 })(jQuery);

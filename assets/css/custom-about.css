@@ -5,9 +5,11 @@
     background-position: top center !important;
 }
 
-/* Hide the image element since we're using background-image */
-#about .image.main {
-    display: none !important;
+/* Hide the image element since we're using background-image (desktop only) */
+@media screen and (min-width: 737px) {
+    #about .image.main {
+        display: none !important;
+    }
 }
 
 /* Custom styling for Coastal Destinations section with scrollable background */
@@ -18,9 +20,11 @@
     background-size: cover !important;
 }
 
-/* Hide the image element since we're using background-image */
-#three .image.main {
-    display: none !important;
+/* Hide the image element since we're using background-image (desktop only) */
+@media screen and (min-width: 737px) {
+    #three .image.main {
+        display: none !important;
+    }
 }
 
 /* Make banner logo fill the circular container */

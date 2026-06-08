@@ -1,0 +1,270 @@
+/* =============================================
+   Mobile Spotlight Fix — stack image above content
+   ============================================= */
+
+@media screen and (max-width: 736px) {
+    /* Let the section grow to fit both image and content */
+    .spotlight {
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Image: relative so it stacks above content, fixed height */
+    .spotlight .image.main {
+        position: relative !important;
+        width: 100% !important;
+        height: 45vw !important;
+        min-height: 200px !important;
+        max-height: none !important;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    .spotlight .image.main img,
+    .spotlight .image.main video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Video section (#two) — override its absolute positioning explicitly */
+    #two .image.main {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 45vw !important;
+        min-height: 200px !important;
+        display: block !important;
+    }
+
+    /* Content: relative so it sits below the image */
+    .spotlight .content {
+        position: relative !important;
+        width: 100% !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        border-left-width: 0 !important;
+        border-right-width: 0 !important;
+        border-top-width: 0.35em !important;
+    }
+
+    /* goto-next arrow */
+    .spotlight .goto-next {
+        position: relative !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* #about and #three use background-image on desktop (image.main hidden).
+       On mobile we show the inline image instead and clear the section background. */
+    #about,
+    #three {
+        background-image: none !important;
+    }
+
+    #about .image.main,
+    #three .image.main {
+        display: block !important;
+    }
+}
+
+/* =============================================
+   Image Zoom Effects
+   ============================================= */
+
+/* Project cards on projects.html — zoom on card image hover */
+.box .image.fit {
+    overflow: hidden;
+    border-radius: 4px;
+}
+.box .image.fit img {
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    display: block;
+    width: 100%;
+}
+.box:hover .image.fit img {
+    transform: scale(1.05);
+}
+
+/* Project banner images at top of detail pages — subtler zoom (no lift, just scale) */
+#content > section > a.image.fit,
+#content .image.fit:not(.project-image-modern) {
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+}
+#content > section > a.image.fit img {
+    transition: transform 0.6s ease;
+    display: block;
+    width: 100%;
+}
+#content > section > a.image.fit:hover img {
+    transform: scale(1.03);
+}
+
+/* Sub-project images (Twilight, Cypher style) — already have .project-image-modern,
+   but ensure the same behaviour applies to any .image.fit inside project content cols */
+#content .row .image.fit {
+    overflow: hidden;
+    border-radius: 12px;
+}
+#content .row .image.fit img {
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    display: block;
+    width: 100%;
+}
+#content .row .image.fit:hover img,
+#content .row span.image.fit:hover img {
+    transform: scale(1.02) translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* =============================================
+   Button System — consistent sizing & shapes
+   ============================================= */
+
+/* Unified border-radius across all button types */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+    border-radius: 6px !important;
+    font-size: 0.85em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    height: 3em;
+    line-height: 3em;
+    padding: 0 2em;
+}
+
+/* .button.alt — "View Details" on project cards
+   Distinct from ghost: uses a low-opacity white fill so it reads as a
+   secondary action without fighting the primary CTA */
+.button.alt {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 400;
+}
+.button.alt:hover,
+.button.alt:active {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* .button (plain ghost) — secondary CTAs like "View Projects" in spotlight sections */
+a.button:not(.primary):not(.alt) {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* .button.primary — main CTAs, nav "Call Now", form submits */
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+.button.primary {
+    border-radius: 6px !important;
+    font-size: 0.85em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Form submit inputs that aren't .primary — match the ghost style */
+input[type="submit"]:not(.primary),
+input[type="reset"]:not(.primary) {
+    border-radius: 6px !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Register FAB */
+.register-fab {
+    position: fixed !important;
+    bottom: 2em;
+    right: 2em;
+    z-index: 9999;
+    background: linear-gradient(135deg, #E2E5E9 0%, #C0C5CE 50%, #A8B2C1 100%);
+    color: #1a1a24 !important;
+    padding: 0.85em 1.8em;
+    border-radius: 50px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+.register-fab:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    color: #111118 !important;
+}
+
+/* =============================================
+   Project Detail Pages — typography & spacing
+   ============================================= */
+
+/* More breathing room in feature lists */
+#content ul li {
+    padding: 0.35em 0;
+    line-height: 1.6;
+}
+
+/* Section headings inside project content */
+#content h3 {
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#content h4 {
+    margin-top: 1.6em;
+    margin-bottom: 0.5em;
+}
+
+#content h5 {
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+    opacity: 0.75;
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Give tables more vertical breathing room */
+.table-wrapper {
+    margin-bottom: 2em;
+}
+
+table.alt tbody tr td {
+    padding: 0.75em 1em;
+}
+
+/* Tighten gap between project sub-sections on New Giza style pages */
+#content hr {
+    margin: 2.5em 0;
+    opacity: 0.25;
+}
+
+/* Project overview banner images — consistent height */
+#content > section > a.image.fit img,
+#content .image.fit img {
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Location paragraph at bottom of project pages */
+#content h3 + p {
+    opacity: 0.85;
+    line-height: 1.8;
+}

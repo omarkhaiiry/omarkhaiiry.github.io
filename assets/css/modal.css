@@ -17,7 +17,7 @@
     background-color: #272833;
     margin: 15% auto; 
     padding: 2em;
-    border: 1px solid #c5a059;
+    border: 1px solid rgba(192, 197, 206, 0.4);
     width: 80%; 
     max-width: 500px;
     text-align: center;
@@ -41,13 +41,13 @@
 
 .close-modal:hover,
 .close-modal:focus {
-    color: #c5a059;
+    color: #C0C5CE;
     text-decoration: none;
     cursor: pointer;
 }
 
 .modal-content h3 {
-    color: #c5a059;
+    color: #ffffff;
     margin-bottom: 0.5em;
 }
 

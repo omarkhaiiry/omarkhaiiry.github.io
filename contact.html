@@ -11,6 +11,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/custom-improvements.css" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
@@ -28,7 +29,7 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="index.html#about">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="contact.html" class="button primary">Call Now</a></li>
+                    <li><a href="tel:+201069933221" class="button primary">Call Now</a></li>
                 </ul>
             </nav>
         </header>
@@ -49,7 +50,7 @@
                             <p>Feel free to reach out directly to Mostafa Farouk via phone or email for a personalized
                                 consultation.</p>
                             <ul class="alt">
-                                <li><span class="icon solid alt fa-phone"></span> +20 106 993 3221</li>
+                                <li><span class="icon solid alt fa-phone"></span> <span class="contact-display-phone">+20 106 993 3221</span></li>
                                 <li><span class="icon solid alt fa-envelope"></span> omark.diab@gmail.com
                                 </li>
                                 <li><span class="icon solid alt fa-map-marker-alt"></span> Park Street – New Cairo</li>
@@ -80,13 +81,23 @@
                                             placeholder="Phone Number" />
                                     </div>
                                     <div class="col-12">
-                                        <select name="interest" id="interest">
-                                            <option value="">- Interested In -</option>
-                                            <option value="Residential">Residential Property</option>
-                                            <option value="Commercial">Commercial Property</option>
-                                            <option value="Investment">General Investment</option>
-                                            <option value="Other">Other</option>
-                                        </select>
+                                        <div class="custom-select-wrapper">
+                                            <div class="custom-select">
+                                                <div class="custom-select__trigger">
+                                                    <span class="custom-select__text">- Interested In -</span>
+                                                    <div class="custom-select__arrow"></div>
+                                                </div>
+                                                <div class="custom-options">
+                                                    <span class="custom-option selected" data-value="">- Interested In -</span>
+                                                    <span class="custom-option" data-value="Residential">Residential Property</span>
+                                                    <span class="custom-option" data-value="Commercial">Commercial Property</span>
+                                                    <span class="custom-option" data-value="Investment">General Investment</span>
+                                                    <span class="custom-option" data-value="Other">Other</span>
+                                                </div>
+                                            </div>
+                                            <!-- Hidden input to hold the value for the form submission -->
+                                            <input type="hidden" name="interest" id="interest" value="">
+                                        </div>
                                     </div>
                                     <div class="col-12">
                                         <textarea name="message" id="message" placeholder="Enter your message"
@@ -133,7 +144,7 @@
             <span class="close-modal">&times;</span>
             <h3>Thank You!</h3>
             <p>Your message has been sent successfully. We will get back to you shortly.</p>
-            <button class="button primary small" id="close-modal-btn">Close</button>
+            <button class="button small" id="close-modal-btn">Close</button>
         </div>
     </div>
 
@@ -146,6 +157,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+	<script src="assets/js/phone-rotation.js"></script>
 
 
 
