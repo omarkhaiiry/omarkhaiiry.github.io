@@ -407,12 +407,36 @@
 		setTimeout(function() { $preloader.style.display = 'none'; }, 650);
 	}
 
+	// 50/50 number rotation — alternates between two consultant numbers each session
+	var NUMBERS = {
+		A: { tel: '+201069933221', wa: '201069933221' },
+		B: { tel: '+201149458885', wa: '201149458885' }
+	};
+	var lastSlot = localStorage.getItem('gdev_slot') || 'B';
+	var activeSlot = lastSlot === 'A' ? 'B' : 'A';
+	localStorage.setItem('gdev_slot', activeSlot);
+	var activeNum = NUMBERS[activeSlot];
+
+	// Swap all tel: links
+	document.querySelectorAll('a[href^="tel:"]').forEach(function(a) {
+		a.href = 'tel:' + activeNum.tel;
+	});
+
+	// Swap all WhatsApp links
+	document.querySelectorAll('a[href*="wa.me"]').forEach(function(a) {
+		a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + activeNum.wa);
+	});
+
+	// Swap any displayed phone number text
+	document.querySelectorAll('.contact-display-phone').forEach(function(el) {
+		el.textContent = activeNum.tel.replace('+2', '+2 ').replace(/(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
+	});
+
 	// "Call Now" nav button: dial on mobile, go to contact page on desktop
 	function updateCallNowLinks() {
 		var isMobile = window.innerWidth <= 736;
 		document.querySelectorAll('a.button.primary[href^="tel:"]').forEach(function(a) {
-			a.dataset.tel = a.dataset.tel || a.getAttribute('href');
-			a.href = isMobile ? a.dataset.tel : 'contact.html';
+			a.href = isMobile ? 'tel:' + activeNum.tel : 'contact.html';
 		});
 	}
 	updateCallNowLinks();

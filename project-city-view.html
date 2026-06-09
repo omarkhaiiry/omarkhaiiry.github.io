@@ -81,6 +81,12 @@
 	]
 }
 	</script>
+	<style>
+	#g-preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:#1c1d26;z-index:200000;opacity:1;transition:opacity .6s ease}
+	#g-preloader.hidden{opacity:0;pointer-events:none}
+	.g-preloader-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#E2E5E9 0%,#C0C5CE 50%,#A8B2C1 100%);display:flex;align-items:center;justify-content:center}
+	.g-preloader-circle span{font-family:'Playfair Display',serif;font-size:2.8em;font-weight:600;color:#1c1d26;line-height:1}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -238,7 +244,7 @@
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2"></script>
 	<script src="assets/js/phone-rotation.js"></script>
 
 </body>
