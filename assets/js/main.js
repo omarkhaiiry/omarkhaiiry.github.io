@@ -375,6 +375,38 @@
 		});
 	});
 
+	// Content protection
+	(function () {
+		// Disable right-click everywhere
+		document.addEventListener('contextmenu', function (e) {
+			e.preventDefault();
+		});
+
+		// Block inspect / view-source keyboard shortcuts
+		document.addEventListener('keydown', function (e) {
+			var k = e.key || e.keyCode;
+			// F12
+			if (k === 'F12' || k === 123) { e.preventDefault(); return; }
+			if (e.ctrlKey || e.metaKey) {
+				// Ctrl+U (view source), Ctrl+S (save), Ctrl+P (print)
+				if (k === 'u' || k === 'U' || k === 's' || k === 'S' || k === 'p' || k === 'P') {
+					e.preventDefault(); return;
+				}
+				if (e.shiftKey) {
+					// Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C (DevTools)
+					if (k === 'i' || k === 'I' || k === 'j' || k === 'J' || k === 'c' || k === 'C') {
+						e.preventDefault(); return;
+					}
+				}
+			}
+		});
+
+		// Prevent image drag
+		document.addEventListener('dragstart', function (e) {
+			if (e.target.tagName === 'IMG') e.preventDefault();
+		});
+	})();
+
 	// Branded preloader — hide when page is ready
 	var $preloader = document.getElementById('g-preloader');
 	if ($preloader) {

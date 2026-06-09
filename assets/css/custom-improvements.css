@@ -1,4 +1,39 @@
 /* =============================================
+   Content Protection — disable selection & image drag
+   ============================================= */
+
+/* Disable text selection site-wide */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Re-enable selection inside form fields so users can type/paste normally */
+input,
+textarea,
+select,
+[contenteditable] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Prevent image dragging */
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+}
+
+/* Images inside links still need pointer-events for click to work */
+a img {
+    pointer-events: auto;
+}
+
+/* =============================================
    Branded Preloader
    ============================================= */
 
