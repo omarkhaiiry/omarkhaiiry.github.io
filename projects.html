@@ -349,6 +349,41 @@
                 icon.classList.add('fa-chevron-down');
             }
         }
+
+        // Open a section without closing others
+        function openCategory(id) {
+            var content = document.getElementById(id);
+            var icon = document.getElementById(id + '-icon');
+            if (!content || content.style.display !== 'none') return;
+            content.style.display = 'flex';
+            if (icon) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        }
+
+        // Handle ?open= URL parameter from homepage buttons
+        (function () {
+            var param = new URLSearchParams(window.location.search).get('open');
+            if (!param) return;
+
+            var scrollTarget = null;
+
+            if (param === 'cairo') {
+                openCategory('east-cairo');
+                openCategory('west-cairo');
+                scrollTarget = document.querySelector('[onclick="toggleCategory(\'east-cairo\')"]');
+            } else if (param === 'coastal') {
+                openCategory('north-coast');
+                scrollTarget = document.querySelector('[onclick="toggleCategory(\'north-coast\')"]');
+            }
+
+            if (scrollTarget) {
+                setTimeout(function () {
+                    scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            }
+        })();
     </script>
 </body>
 

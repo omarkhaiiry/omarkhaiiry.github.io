@@ -336,31 +336,6 @@
 		setTimeout(playVideo, 100);
 	});
 
-	// Contact Number Rotation (Even 50/50 split per session)
-	var phoneNumbers = [
-		{ tel: "+201069933221", wa: "201069933221", display: "+20 106 993 3221" },
-		{ tel: "+201011039552", wa: "201011039552", display: "+20 101 103 9552" }
-	];
-
-	// Use sessionStorage to keep the number consistent while the user browses different pages
-	var contactIndex = sessionStorage.getItem('assignedContactIndex');
-	if (contactIndex === null) {
-		// Randomly assign 0 or 1 on their first page load for an even 50/50 split
-		contactIndex = Math.random() < 0.5 ? 0 : 1;
-		sessionStorage.setItem('assignedContactIndex', contactIndex);
-	} else {
-		contactIndex = parseInt(contactIndex, 10);
-	}
-
-	var contact = phoneNumbers[contactIndex];
-	
-	// Update all phone and whatsapp links on the page
-	$('a[href^="tel:"]').attr('href', 'tel:' + contact.tel);
-	$('a[href^="https://wa.me/"]').attr('href', 'https://wa.me/' + contact.wa);
-	
-	// Update visible text
-	$('.contact-display-phone').text(contact.display);
-
 	/* Custom Select Logic */
 	document.querySelectorAll('.custom-select-wrapper').forEach(function(wrapper) {
 		const select = wrapper.querySelector('.custom-select');
@@ -410,7 +385,7 @@
 	// 50/50 number rotation — alternates between two consultant numbers each session
 	var NUMBERS = {
 		A: { tel: '+201069933221', wa: '201069933221' },
-		B: { tel: '+201149458885', wa: '201149458885' }
+		B: { tel: '+201011039552', wa: '201011039552' }
 	};
 	var lastSlot = localStorage.getItem('gdev_slot') || 'B';
 	var activeSlot = lastSlot === 'A' ? 'B' : 'A';
