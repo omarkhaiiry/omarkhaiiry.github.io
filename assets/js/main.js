@@ -400,6 +400,13 @@
 		});
 	});
 
+	// Branded preloader — hide when page is ready
+	var $preloader = document.getElementById('g-preloader');
+	if ($preloader) {
+		$preloader.classList.add('hidden');
+		setTimeout(function() { $preloader.style.display = 'none'; }, 650);
+	}
+
 	// "Call Now" nav button: dial on mobile, go to contact page on desktop
 	function updateCallNowLinks() {
 		var isMobile = window.innerWidth <= 736;
