@@ -407,11 +407,13 @@
 		});
 	})();
 
-	// Branded preloader — hide when page is ready
+	// Branded preloader — hide after page fully loads
 	var $preloader = document.getElementById('g-preloader');
 	if ($preloader) {
-		$preloader.classList.add('hidden');
-		setTimeout(function() { $preloader.style.display = 'none'; }, 650);
+		window.addEventListener('load', function() {
+			$preloader.classList.add('hidden');
+			setTimeout(function() { $preloader.style.display = 'none'; }, 1200);
+		});
 	}
 
 	// 50/50 number rotation — alternates between two consultant numbers each session

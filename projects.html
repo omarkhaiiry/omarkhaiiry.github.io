@@ -54,9 +54,10 @@
 }
 	</script>
 	<style>
-	#g-preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:#1c1d26;z-index:200000;opacity:1;transition:opacity .6s ease}
+		#g-preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:#1c1d26;z-index:200000;opacity:1;transition:opacity .9s ease .25s}
 	#g-preloader.hidden{opacity:0;pointer-events:none}
-	.g-preloader-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#E2E5E9 0%,#C0C5CE 50%,#A8B2C1 100%);display:flex;align-items:center;justify-content:center}
+	.g-preloader-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#E2E5E9 0%,#C0C5CE 50%,#A8B2C1 100%);display:flex;align-items:center;justify-content:center;transition:transform .85s cubic-bezier(.4,0,.2,1),opacity .55s ease}
+	#g-preloader.hidden .g-preloader-circle{transform:translate(-50%,-50%) scale(9);opacity:0}
 	.g-preloader-circle span{font-family:'Playfair Display',serif;font-size:2.8em;font-weight:600;color:#1c1d26;line-height:1}
 	</style>
 </head>
@@ -126,7 +127,7 @@
                     <div id="west-cairo" class="row category-content" style="display: none;">
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
-                                <a href="project-new-giza.html" class="image fit"><img loading="lazy" src="images/newgiza%20logo.jpg"
+                                <a href="project-new-giza.html" class="image fit"><img loading="lazy" src="images/newgiza-logo.jpg"
                                         alt="New Giza Logo" /></a>
                                 <header>
                                     <h3>New Giza</h3>
@@ -141,7 +142,7 @@
                         </div>
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
-                                <a href="project-ivy.html" class="image fit"><img loading="lazy" src="images/IVY%20logo.jpg"
+                                <a href="project-ivy.html" class="image fit"><img loading="lazy" src="images/IVY-logo.jpg"
                                         alt="IVY New Zayed" /></a>
                                 <header>
                                     <h3>IVY New Zayed</h3>
@@ -214,7 +215,7 @@
                         <div class="col-4 col-6-medium col-12-small">
                             <section class="box">
                                 <a href="project-playa-ghazala.html" class="image fit zoom-image"><img
-                                        src="images/playa%20ghazala%20logo.jpg" alt="Playa Ghazala Logo" /></a>
+                                        src="images/playa-ghazala-logo.jpg" alt="Playa Ghazala Logo" /></a>
                                 <header>
                                     <h3>Playa Ghazala</h3>
                                 </header>
@@ -296,11 +297,11 @@
                 </li>
                 <li><a href="mailto:contact@spc-thegdevelopments.com" class="icon solid alt fa-envelope"><span
                             class="label">Email</span></a></li>
-                <li><a href="https://wa.me/201149458885" class="icon brands alt fa-whatsapp"><span
+                <li><a rel="nofollow noopener noreferrer" href="https://wa.me/201149458885" class="icon brands alt fa-whatsapp"><span
                             class="label">WhatsApp</span></a></li>
-                <li><a href="https://www.facebook.com/share/1EE18chJG2/" class="icon brands alt fa-facebook-f"><span
+                <li><a rel="nofollow noopener noreferrer" href="https://www.facebook.com/share/1EE18chJG2/" class="icon brands alt fa-facebook-f"><span
                             class="label">Facebook</span></a></li>
-                <li><a href="https://www.instagram.com/thegproperties__" class="icon brands alt fa-instagram"><span
+                <li><a rel="nofollow noopener noreferrer" href="https://www.instagram.com/thegproperties__" class="icon brands alt fa-instagram"><span
                             class="label">Instagram</span></a></li>
             </ul>
             <ul class="copyright">
